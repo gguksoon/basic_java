@@ -1,0 +1,1415 @@
+=====================================================[0415]=====================================================
+
+김승섭 선생님 33
+
+ㅁ jre: 자바 실행
+ㅁ jdk: 자바 개발환경
+
+ㅁ 오라클 https://www.oracle.com/kr/index.html
+   아래의 <개발자용 Java 다운로드> 클릭
+   맨 아래의 <Java Archive> 다운로드 클릭
+
+	- Java SE 7 다운로드(Java SE Development Kit 7u80 > Windows x64)
+	  next > 경로변경(change...)(E:\B_Util\2.Java\JDK1.7\) > next > jre에서 cancel > yes > close
+
+	- Java SE 8 다운로드(Java SE Development Kit 8u192 > Windows x64)
+	  next > 경로변경(change...)(E:\B_Util\2.Java\JDK1.8\) > next > X버튼으로 종료(jre설치하는 경로지정하는 화면에서) > close
+
+	- 환경변수설정
+	  제어판 - 시스템 - 고급 시스템 설정 - 환경 변수 - 시스템 변수 아래의 새로 만들기 - 변수이름: JAVA_HOME / 변수값: E:\B_Util\2.Java\JDK1.7 - 확인
+	  시스템변수의 "Path" 선택 후 편집 - 변수값의 가장 오른쪽에 ;%JAVA_HOME%\bin 붙이기(ex:%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%JAVA_HOME%\bin) - 확인
+
+	- cmd > java -version > java version "1.7.0.80"이라고 뜨는 것 확인
+
+ㅁ 메모장 실행 > 
+public class Hello {
+	public static void main(String[] args){
+		System.out.println("Hello, Java");
+	}
+}
+> 저장(Hello.java)
+> cmd > javac Hello.java > java Hello > "Hello, Java" 출력 확인
+
+이클립스 설치 https://www.eclipse.org/
+우측 상단 다운로드 > Download Packages 클릭 > MORE DOWNLOADS의 Eclipse Kepler (4.3) 클릭 > Eclipse IDE for Java EE Developers 다운로드(Windows 64-bit)
+압축풀고 폴더 명 eclipse_kepler로 변경 > 폴더로 들어가서 eclipse.ini 우클릭하여 notepad++로 실행 > 
+마지막 줄의 -Xms40m -Xmx512m 변경(이클립스가 차지하는 메모리 할당(40M~512M)) > -Xms1024m - Xmx1024m으로 변경
+
+
+이클립스 실행 - Window - preferences - 검색창에 encoding
+1. Workspace의 Text file encoding에 Other(UTF-8) 선택
+2. CSS Files의 Encoding을 ISO 10646/Unicode(UTF-8) 선택
+3. HTML Files의 Encoding을 ISO 10646/Unicode(UTF-8) 선택
+4. JSP Files의 Encoding을 ISO 10646/Unicode(UTF-8) 선택
+5. Content Types의 4가지 모두에 Default encoding을 UTF-8 입력 후 Update
+	(4가지: Java Archive, Java Class File, Text, Word Document)
+6. 5.의 Text의 하위 내용까지 모두 UTF-8인지 확인(모든 화살표 다 열어서 확인)
+
+우측 상단의 Java EE는 웹개발을 뜻함.
+Java만 하기 위해 왼쪽 버튼으로 Java 선택
+
+글씨크기 - perferences - font 검색 - Colors and Fonts - Basic - Text Font - Edit 
+
+<Oracle> https://www.oracle.com/kr/index.html
+1. OracleXE112_Win64(서버) > 오라클홈페이지의 다운로드 클릭 > 데이터베이스의 Database 11g Enterprise/Standard Editions > 아래쪽의 Oracle Database 11g Release 2 Express Edition for Windows 64 > Oracle Database 11gR2 Express Edition for Windows x64 Download
+ > next > 동의 후 next > 경로변경(E:\B_Util\4.Oracle) 후 next > 예(Y) > 비번 java 후 next > install > finish
+2. win32_11gR2_client(클라이언트)
+다운로드 > 데이터베이스 > Database 11g Enterprise/Standard Editions > Oracle Database 11g Release 2 > Microsoft Windows (32-bit) > See All > Oracle Database 11g Release 2 Client (11.2.0.1.0) for Microsoft Windows (32-bit) 
+ > Instant Client 선택 후 다음 > 경로설정(E:\B_Util\4.Oracle\appClient) 후 다음 > 완료 > 설치 성공 후 닫기
+1, 2 설치 후 설치 파일 삭제
+
+<sqldeveloper>
+다운로드 > Developer Tools > SQL Developer > Windows 32-bit/64-bit 설치 ( jdk 설치 안된 것 )
+오라클 위치에 폴더 넣고 "sqldeveloper.exe" 실행 > JDK 경로 설정(E:\B_Util\2.Java\JDK1.8) > 임포트 설정 아니오
+
+접속의 + 클릭 > 접속이름 system, 사용자이름 system, 비번 java, 7비번 저장, 호스트이름(서버의 ip주소), 포트 1521, SID xe > 테스트 눌렀을 때 좌측 하단 "상태: 성공"되면 저장 후 접속
+
+
+---------------------------------------
+
+금요일까지 ppt \\Sem-pc\공유폴더\초급자바\과제제출\설치하기에 제출
+파일이름: 응용SW기초기술활용_설치하기_조민수
+
+
+
+
+
+=====================================================[0416]=====================================================
+
+< a_variable -> Variable >
+
+ㅁ 코딩: 프로그램 코드를 작성하는 것
+
+ㅁ 패키지: 폴더(클래스의 집합)
+ㅁ 클래스: 파일(데이터의 집합)
+ㅁ 메서드: 기능
+
+ㅁ 한 줄 주석: Ctrl + Shift + C
+ㅁ 범위 주석: Ctrl + Shift + / (해제: \)
+
+ㅁ System.out.println(); // 괄호안에 있는 문자열을 콘솔창에 출력하는 '메서드'
+
+ㅁ 예약어: 자바에 정의된 특별한 의미와 기능을 가진 단어(찐한 글씨.. ex) public, static)
+ㅁ 예약어 외의 코드는 대부분 이름(클래스, 메서드, 변수 등)으로 선언 혹은 호출하는 코드이다.
+ㅁ 이름외에는 데이터(숫자, 문자 등)와 연산자(+, -, =)가 있다.
+
+ㅁ 기본형 타입
+   - 정수: byte(1byte), short(2byte), int(4byte), long(8byte)
+   - 실수: float(4byte), double(8byte)
+   - 문자: char(2byte)
+   - 논리: boolean(1byte)
+
+ㅁ 참조형 타입(4byte)
+   - 기본형 외의 모든 타입(클래스)
+   - 문자열: String
+   - 실제 값은 따로 저장하고 변수에는 값이 저장된 주소를 저장한다.
+
+ㅁ 명명규칙(변수명)
+   - 블럭안에서 변수명은 중복될 수 없다.
+   - 영문자 대소문자, 한글, 숫자, 특수문자('_', '$')를 사용할 수 있다.(한글 사용은 자제)
+   - 대소문자가 구분되며 길이에 제한이 없다.
+   - 숫자로 시작할 수 없다.
+   - 예약어는 사용할 수 없다.
+   - [관례]
+   - [기본적으로 변수는 소문자로 사용하고, 상수는 대문자를 사용한다.]
+   - [여러 단어로 이루어진 경우 단어의 첫 글자를 대문자로 한다.(상수는 언더바로 구분)]
+   - [클래스명의 첫 글자는 대문자로 한다.]
+   - [패키지명은 모두 소문자로 한다.]
+
+ㅁ 변수: 하나의 데이터를 저장할 수 있는 메모리상의 공간
+
+ㅁ 초기화: 변수에 처음으로 값을 저장하는 것
+
+ㅁ 정수타입의 저장 가능 범위
+   - byte: -2^7 ~ 2^7-1
+   - short: -2^15 ~ 2^15-1
+   - int: -2^31 ~ 2^31-1
+   - long: -2^63 ~ 2^63-1
+
+ㅁ 오버플로우: 최댓수가 저장된 변수에 +1이 되면 최솟수로 변하는 것
+ㅁ 언더플로우: 최솟수가 저장된 변수에 -1이 되면 최댓수로 변하는 것
+
+ㅁ 실수는 부호, 지수, 가수로 나누어 저장한다.
+ㅁ 실수타입의 저장 가능 범위
+   - float의 양수 표현범위: 1.4 * 10^-45 ~ 3.4 * 10^38
+     > 저장할 수 있는 수가 많지만, 정확하게 표현할 수 없다.
+     > 정밀도: 7자리
+       ex) float decimal = 0.1234567890123456789f;
+           System.out.printf("%21.20f%n", decimal); -> 출력값: 0.12345679104328156000
+           decimal = 123456789.0f;
+           System.out.printf("%f%n", decimal); -> 출력값: 123456792.000000
+   - double의 양수 표현범위: 4.9 * 10^-324 ~ 1.8 * 10^308
+     > 저장할 수 있는 수가 많지만, 정확하게 표현할 수 없다.
+     > 정밀도: 15자리
+       ex) double bigDecimal = 0.1234567890123456789d;
+           System.out.printf("%21.20f%n", bigDecimal); -> 출력값: 0.12345678901234568000
+           bigDecimal = 1234567890123456789.0;
+           System.out.printf("%f%n", bigDecimal); -> 출력값: 1234567890123456770.000000
+
+ㅁ char(문자타입)은 유니코드를 사용한다.
+   - 문자타입의 저장 가능 범위: 2^16-1
+   ex) char character = 'A';
+       System.out.println(character); -> 출력값: A
+       System.out.println((int)character); -> 출력값: 65
+       character = '\u0041'; //유니코드 16진수(A, 65)
+       System.out.println(character); -> 출력값: A
+
+ㅁ 특수문자 '\'는 escape문자로, 문법을 벗어난 내용을 표현할 때 사용
+   ex) System.out.println("A\tB\"" + '\''); -> 출력값: A	B"'
+
+ㅁ 기본값(boolean을 제외한 기본형 타입 간에는 서로 변환이 가능하다.)
+   - int i = 0;
+   - long l = 0L;
+   - float f = 0.0f;
+   - double d = 0.0d; // d가 붙지 않아도 됨
+   - char ch = ' '; // 유니코드: \u0000
+   - boolean bl = false;
+   - String str = null;
+
+ㅁ 형변환
+   ex) int cast1 = (int)2000000000000L;
+       System.out.println(cast1); -> 출력값: -1454759936(오버플로우 된 값임)
+   ex) long cast2 = 10; // 10은 int타입
+       System.out.println(cast2); -> 출력값: 10
+       > 10L이 아닌 10을 적어도 오류가 나지 않는 것은 작은 타입을 큰 타입에 저장하는 것이기 때문이다.
+   ex) int cast3 = (int)50.5; //50.5는 double타입
+       System.out.println(cast3); -> 출력값: 50
+   ex) float cast4 = (float)5.5; // 5.5는 double타입
+       System.out.println(cast4);
+
+ㅁ 상수: 값을 한번 저장하면 변경할 수 없는 저장공간
+   ex) final int MAX_NUMBER = 100;
+
+ㅁ 리터럴: 그 자체가 값을 의미하는 것
+   - boolean타입과 null은 숫자타입과 연산이 불가능하다.
+     ex) System.out.println(true + 10); // 에러발생
+         System.out.println(null + 10); // 에러발생
+         System.out.println(true + null); // 에러발생
+   - String과 연산되는 모든 타입은 String으로 변환된다.
+     ex) System.out.println("" + 123 + 456); -> 출력값: 123456
+         System.out.println(123 + 456 + ""); -> 출력값: 579
+         System.out.println(true + "123"); -> 출력값: true123
+         System.out.println(null + "123"); -> 출력값: null123
+
+
+
+* 숙제: 내일까지 기본형 및 참조형 타입과 명명규칙 외우기
+* 숙제2: 연습문제 2장
+
+
+
+
+
+=====================================================[0417]=====================================================
+
+< b_operator -> ArithmeticOperator >
+
+ㅁ 산술 연산자
+   - '+': 더하기
+   - '-': 빼기
+   - '*': 곱하기
+   - '/': 나누기
+   - '%': 나머지
+   - 이항 연산자는 양쪽의 피연산자의 타입이 일치해야 연산이 가능하다.
+
+
+
+< b_operator -> ComparisonOperator >
+
+ㅁ 비교 연산자
+   - '<': 작다
+   - '>': 크다
+   - '<=': 작거나 같다
+   - '>=': 크거나 같다
+   - '==': 같다
+   - '!=': 같지 않다
+
+
+
+
+
+=====================================================[0418]=====================================================
+
+< b_operator -> LogicalOperator >
+
+ㅁ 논리 연산자
+   - '&&'(AND): 피연산자 둘 다 true이면 true를 결과로 얻는다.
+   - '||'(OR): 피연산자 중 하나라도 true이면 true를 결과로 얻는다.
+   - '!'(NOT): 피연산자가 true이면 false를, false이면 true를 결과로 얻는다.
+   * 피연산자로 boolean만 허용한다.
+   * AND연산이 OR연산보다 우선순위가 높다.
+   * 논리 연산자는 효율적인 연산을 한다.
+   * 왼쪽의 피연산자에서 결과가 정해지면 오른쪽은 수행하지 않는다.
+   * 우선순위: 산술연산 > 비교연산 > 논리연산
+
+
+
+< b_operator -> EtcOperator >
+
+ㅁ 비트 연산자
+   - '|'(OR): 피연산자 중 한 쪽이라도 값이 1이면 1, 그 외는 0을 결과로 얻는다.
+   - '&'(AND): 피연산자 양 쪽이 모두 1이어야만 1, 그 외는 0을 결과로 얻는다.
+   - '^'(XOR): 피연산자의 값이 서로 다를 때만 1, 같을때는 0을 결과로 얻는다.
+   - '~'(비트 전환): 피연산자를 0은 1로 1은 0으로 바꾼다.
+   - '<<'(쉬프트): 피연산자의 각 자리를 왼쪽으로 이동시킨다. 빈칸은 0으로 채운다.
+   - '>>'(쉬프트): 피연산자의 각 자리를 오른쪽으로 이동시킨다. 빈칸은 앞자리와 동일한 값으로 채운다.
+
+ㅁ 기타 연산자
+   - '(type)': 형변환(casting)
+   - '?:'(삼항연산자): 조건식 ? 조건식이 참일 경우 수행할 문장 : 조건식이 거짓일 경우 수행할 문장
+   - instanceof: 참조형 타입 확인
+
+
+
+
+
+=====================================================[0419]=====================================================
+
+< c_statement -> ConditionalStatement >
+
+ㅁ if문
+   - 'if': 조건식의 결과가 true이면 블럭안의 문장을 수행한다.
+   - 'else if': 다수의 조건이 필요할 때 if 뒤에 추가한다.
+   - 'else': 결과가 true인 조건식이 하나도 없는 경우를 위해 추가한다.
+
+ㅁ switch문
+   - 조건식과 일치하는 case문 이후의 문장을 수행한다.
+   - 조건식의 결과는 정수와 문자열만(JDK1.7부터 문자열 허용) 허용한다.
+
+ㅁ Scanner
+   - 사용자에게 입력을 받기 위해 스캐너를 생성한다.
+	(Scanner sc = new Scanner(System.in);)
+   - 다른 패키지에 있는 클래스를 사용하기 위해서는 import를 해야한다.
+	(import java.util.Scanner;)
+   - 문자열
+	String str = sc.nextLine();
+   - 숫자
+	int num = Integer.parseInt(sc.nextLine());
+	int num = sc.nextInt(); // nextInt는 문제가 있으니 사용하지 말자.
+
+
+
+
+
+=====================================================[0422]=====================================================
+
+< c_statement - RepetitiveStatement >
+
+ㅁ for문
+   - for(초기화; 조건식; 증감식){ }
+     //초기화: 조건식과 증감식에 사용할 변수 초기화
+     //조건식: 연산결과가 true이면 블럭안의 내용을 수행
+     //증감식: 변수를 증가/감소시켜 반복문을 제어
+
+ㅁ while문
+   - while(조건식){ }
+     //조건식의 결과가 true인 동안 계속해서 반복
+     //반복횟수를 알 수 없을 때 사용
+
+
+ㅁ 이름있는 반복문
+	outer: for (int i = 2; i <= 9; i++) {
+		for (int j = 1; j <= 9; j++) {
+			if (j == 5) {
+				// break; // 가장 가까운 반복문 탈출
+				break outer; // outer라는 이름의 반복문 탈출
+				// continue; // 가장 가까운 반복문의 현재 반복회차에서 탈출
+				// continue outer; // outer라는 이름의 반복문의 현재 반복회차에서 탈출
+			}
+			System.out.println(i + " * " + j + " = " + i * j);
+		}
+		System.out.println();
+	}
+
+
+
+
+
+=====================================================[0423]=====================================================
+
+< y_homework - Problem0422.java >
+
+ㅁ for문을 이용하여 별 찍기
+
+
+
+< y_homework - Problem0423.java >
+
+ㅁ 야구게임
+
+
+
+
+
+=====================================================[0424]=====================================================
+
+< d_array - Array.java >
+
+ㅁ import하기: import java.util.Arrays;
+	import 단축키: Ctrl + Shift + o
+
+ㅁ 배열(참조형 타입, 실 데이터는 따로 저장하며 주소만 저장함)
+   - int[] number = new int[5]; // 기본값으로 초기화된다.
+	or int number[]
+   - int[] number = new int[] {10, 20, 30, 40, 50};
+   - int[] number = {10, 20, 30, 40, 50}; // 꼭 선언과 초기화를 동시에 해야한다.
+
+ㅁ 배열의 index에는 int만 사용할 수 있다.(리터럴, 변수, 상수, 연산 등)
+	단, 음수는 사용 불가
+
+ㅁ 배열의 최대크기: int의 최대값(약 20억)이다.
+
+ㅁ 향상된 for문 // 읽기만 가능. 배열 변경 불가
+   - for(int tmp : arr)
+     	System.out.print(tmp + ", ");
+
+ㅁ 배열 출력
+   - char[] charArray = {'a', 'b', 'c', 'd'};
+     System.out.println(charArray); // 캐릭터값이 출력됨 > abcd
+   - char형을 제외한 나머지 타입은 배열의 주소값이 출력됨 > [I@3654919e
+
+ㅁ 배열의 모든 값을 String 형태로 저장 > Arrays.toString(array);
+   - int[] array = {10, 20, 30, 40, 50};
+     String arrayStr = Arrays.toString(array);
+     System.out.println(arrayStr);
+     > 출력: [10, 20, 30, 40, 50]
+
+ㅁ 배열 복사
+   - System.arraycopy(num, 0, newNum, 0, num.length);
+	num: 복사할 배열, 0: 0번째부터, newNum: 복사한 배열을 저장할 배열,
+		0: 0번째부터, num.length: 복사할 배열의 길이
+
+
+
+
+
+=====================================================[0425]=====================================================
+
+< d_array - Sort.java >
+
+ㅁ 선택정렬: 첫번째 숫자부터 그 뒤의 모든 숫자들과 비교해서 작은수와 자리 바꾸기를 반복해
+		앞에서부터 작은수를 채워나가는 방식
+ㅁ 버블정렬: 첫번째 숫자부터 바로 뒷 숫자와 비교해서 크면 자리 바꾸기를 반복해
+		뒤에서부터 큰 수를 채워나가는 방식
+ㅁ 삽입정렬: 두번째 숫자부터 그 앞의 모든 숫자들과 비교해서 큰 수들을 뒤로 밀고
+		중간에 삽입하는 방식
+ㅁ 석차구하기: 모든 점수가 1등으로 시작해서 다른 점수들과 비교해
+		자신의 점수가 작으면 1씩 증가시키는 방식
+
+
+
+
+
+
+=====================================================[0426]=====================================================
+
+< d_array - StringArray.java >
+
+ㅁ String s = new String("ABCD"); // 참조형 타입을 초기화 하는 방법
+   String str = "ABCD"; // String은 특별히 간단하게 초기화 가능
+  
+ㅁ String의 주요 메서드
+   - equlas()	: 문자열의 내용이 같은지 확인한다.
+   - length()	: 문자열의 길이를 반환한다.
+   - charAt()	: 문자열에서 해당 위치에 있는 문자를 반환한다.
+   - substring(): 문자열에서 해당 범위에 있는 문자열을 반환한다.
+   - indexOf()	: 문자열 내의 특정 문자열의 인덱스를 반환한다.
+   - replace()	: 문자열 내의 특정 문자열을 원하는 문자열로 변경해 반환한다.
+
+ㅁ String[] args
+   - Run Configurations - Arguments - Program arguments에 값을 입력하면(공백을 기준으로 나누어서 배열에 저장됨)
+     > args를 출력할 때 값이 나온다.
+
+
+
+< d_array - MultiDimensionalArray.java >
+
+ㅁ 다차원 배열
+   - 배열안에 배열이 저장되어 있는 형태이다.
+
+
+
+
+
+=====================================================[0429]=====================================================
+
+< d_array - lotto - Lotto.java >
+
+ㅁ 로또 프로그램
+
+
+
+
+
+=====================================================[0430]=====================================================
+
+< e_oop - OOP.java >
+< e_oop - SampleClass.java >
+< e_oop - Restaurant.java >
+
+ㅁ 객체지향프로그래밍
+   - 실세계를 모델로 프로그래밍하는 방식
+   - 사람, 사물: 클래스
+   - 행동, 동작: 메서드
+
+ㅁ 클래스의 구성
+   - 클래스 파일의 가장 첫줄에는 패키지(package)를 선언한다.
+   - 패키지와 클래스 선언 사이에 임포트(import)를 선언한다.
+	> import는 다른 패키지를 사용하기 위한 것.
+   - [제어자] class 클래스명 [상속] {}
+   - 변수와 메서드로 구성할 수 있다.
+
+ㅁ 전역변수와 지역변수
+   - 위치에 따라 전역변수와 지역변수로 나누어진다.
+   - 메서드 밖에 있는 변수는 전역변수로 모든 메서드가 사용할 수 있다.
+   - 메서드 안에 있는 변수는 지역변수로 해당 메서드에서만 사용할 수 있다.
+
+ㅁ 메서드
+   - [제어자] 리턴타입 메서드명([매개변수]) { return; }
+   - 메서드명([인자]); -> 메서드 호출 결과 리턴값 존재시 리턴값 변환
+   - 참조형 매개변수는 메서드에서 수행한 연산이 변수에 반영된다.
+
+ㅁ 객체 생성(인스턴스화)
+   - new 클래스명(); -> 객체가 저장된 메모리 주소 변환
+   - 객체를 저장한 변수뒤에 점(.)을 붙여 객체의 변수와 메서드에 접근할 수 있다.
+   - 객체는 생성될때 마다 새로운 객체가 생성되고, 여러개의 객체가 동시에 존재할 수 있다.
+
+
+
+< e_oop - OOP.java >
+< e_oop - Calculator.java >
+
+ㅁ 계산기
+
+
+
+
+
+=====================================================[0501]=====================================================
+
+< e_oop - OOPetc.java >
+
+ㅁ 생성자
+   - 클래스명과 동일한 이름의 메서드는 생성자이다.
+   - 클래스에는 하나 이상의 생성자가 있어야 한다.
+   - 생성자는 직접 만들 수 있고, 만들지 않으면 컴파일러가 기본 생성자를 만들어준다.
+   - 생성자는 인스턴스 변수를 초기화하거나 인스턴스 생성시에 실행되어야 할 작업을 위해서 사용된다.
+   - 생성자는 리턴값이 없다.
+
+ㅁ 초기화 블럭
+   - [static] {}
+   - 멤버변수의 초기화를 위한 블럭이다.
+   - 변수의 명시적 초기화 -> 초기화 블럭 -> 생성자 순으로 실행된다.
+   - 명시적 초기화: static int a = 10;
+   - 초기화 블럭: static { a = 10; }
+
+ㅁ 오버로딩
+   - 매개변수의 갯수나 타입이 다르다면 매서드명은 중복될 수 있다.
+   - 리턴타입도 다를 수 있지만 리턴타입만 다른 오버로딩은 허용되지 않는다.
+
+ㅁ this, this()
+   - this는 전역변수와 지역변수를 구분하기 위해 사용한다.(전역변수에 사용)
+   - this()는 생성자에서 다른 생성자를 호출하기 위해 사용한다.
+   - this()는 생성자의 첫줄에서만 사용할 수 있다.
+
+ㅁ static
+   - 전역변수와 메서드에 붙일 수 있다.
+   - 객체를 생성하지 않아도 메모리에 올라가 있어 클래스명.으로 바로 접근할 수 있다.
+   - static이 붙은 변수를 클래스 변수, 메서드를 클래스 메서드라고 한다.
+   - static이 붙지 않은 변수를 인스턴스 변수, 메서드를 인서턴스 메서드라고 한다.
+   - 클래스 변수는 생성된 객체와 별개의 메모리를 사용하여 객체의 생성에 영향을 받지 않고
+	 객체들이 공유해서 사용할 수 있다.
+   - 클래스 메서드에서 인스턴스 변수나 인스턴스 메서드를 사용하기 위해서는 인스턴스화를 해야한다.
+
+ㅁ JVM 메모리 구조
+   - 메서드 영역(method area): 클래스에 대한 정보를 저장한다. -> static
+   - 힙(heap): 인스턴스(객체)가 저장된다.
+   - 호출스택(call stack): 호출된 메서드가 저장된다. -> FILO
+
+ㅁ 재귀호출
+   - 메서드 내에서 메서드 자신을 호출하는 것이다.
+   - 재귀호출을 하는 메서드를 재귀 메서드라고 한다.
+   - 무한반복을 벗어나기 위한 조건이 있어야 한다.
+
+
+
+
+
+=====================================================[0502]=====================================================
+
+< e_oop - OOPTest.java > 
+
+ㅁ TV클래스 만들기
+
+
+
+
+
+=====================================================[0503]=====================================================
+
+< f_oop2 - Inheritance.java >
+	< f_oop2 - SampleParent.java >
+		< f_oop2 - SampleChild.java >
+
+ㅁ 상속
+   - 자식클래스명 extends 부모클래스명 {}
+   - 기존의 클래스를 물려받아 새로운 클래스를 만드는 것이다.
+   - 부모 클래스의 생성자와 초기화블럭을 제외한 모든 멤버를 물려받는다.
+   - 클래스를 상속받는 것은 하나만 가능하다.
+   - 자식 클래스는 부모 클래스의 멤버 외의 새로운 멤버를 가질 수 있으므로
+     자식 클래스는 부모 클래스보다 크거나 같다.
+   - 상속받지 않는 모든 클래스는 Object 클래스를 상속받는다.
+
+ㅁ super, super()
+   - super는 부모 클래스의 멤버에 접근하기 위해 사용한다.
+   - super대신 this를 사용해도 부모 클래스의 멤버에 접근할 수 있다.
+   - 부모와 자식의 멤버가 서로 중복되어 구분이 필요할 때 super를 사용하는 것이 좋다.
+   - super()는 부모 클래스의 생성자를 호출하기 위해 사용한다.
+   - 자식 클래스 생성자의 첫줄에는 super()가 있어야 한다.
+
+ㅁ 오버라이딩
+   - 상속받은 메서드의 내용을 재정의하는 것이다.
+   - 상속받은 메서드와 메서드명, 매개변수, 리턴타입이 같아야 한다.
+   - 상속받은 메서드보다 좁은 범위의 접근제어자로 변경할 수 없다.
+   - 상속받은 메서드보다 많은 예외를 선언할 수 없다.
+   - static을 빼거나 더할 수 없다.
+
+ㅁ 다형성
+   - 하나의 메서드나 클래스가 다양한 방법으로 동작하는 것을 의미한다.
+   - 부모타입으로 생성된 객체는 부모타입에 정의된 멤버만 사용 가능하다.
+   - 부모타입과 자식타입은 서로 형변환이 가능하다.
+   - 자식타입 -> 부모타입: Up-casting(생략가능)
+   - 부모타입 -> 자식타입: Down-casting(생략불가)
+   - 형변환이 인스턴스에 영향을 주진 않는다.
+   - 부모타입에서 자식타입으로 형변환시 instanceof 연산자로 인서턴스를 확인하는 것이 안전하다.
+   - 부모와 자식에 동일한 메서드가 있는 경우 자식의 메서드를 사용한다.
+   - 부모와 자식에 동일한 멤버변수가 있는 경우 부모타입에서는 부모의 변수를,
+     자식타입에서는 자식의 변수를 사용한다.
+
+ㅁ 제어자(접근제어자)
+   - 외부로부터 데이터를 보호하거나 감추기 위해 사용한다.
+   - 접근제어자: private, default, protected, public
+   - private: 같은 클래스 내에서만 접근이 가능하다.
+   - default: 같은 패키지 내에서만 접근이 가능하다.
+   - protected: 같은 패키지 내에서, 그리고 다른 패키지의 자식클래스에서 접근이 가능하다.
+   - public: 접근에 제한이 없다.
+   - 그 외 제어자: static, final, abstract(더 있지만 초급의 범위를 벗어남)
+
+ㅁ <Vector> 클래스
+   - 길이의 제한이 없다. 타입을 지정하지 않으면 타입을 가리지 않고 저장 가능
+   - add(Object): 객체를 저장한다. 성공하면 true 실패하면 false를 반환
+   - remove(Object): 저장되어 있는 객체를 제거한다. 성공하면 true 실패하면 false를 반환
+   - isEmpty(): 비어있는지 검사한다. 비어있으면 true 비어있지 않으면 false를 반환
+   - get(int): 저장된 위치의 객체를 반환한다. 반환타입은 Object이므로 형변환이 필요
+      > int는 index같이 사용
+   - size(): 저장된 객체의 수를 반환한다.
+   
+
+
+< f_oop2 - Store.java >
+
+
+
+
+
+=====================================================[0507]=====================================================
+
+< f_oop2 - AccessModifier.java >
+< f_oop2 - Inheritance.java >
+< f_oop2 - f_oop2.test - AccessTest.java >
+
+ㅁ 제어자(접근제어자)
+
+
+
+< f_oop2 - Time.java >
+
+ㅁ Getter & Setter
+   - private int hour, minute, second; 를 선언하고
+     Source - Generate Getters and Setters를 들어가면
+     public타입의 getter와 setter를 자동생성 가능하다.
+   - Source - Generate toString()에 들어가면
+     toString()메서드를 자동생성 가능하다.
+
+
+
+< f_oop2 - Singleton.java >
+	< f_oop2 - Inheritance.java >
+
+ㅁ 싱글톤
+   - 싱글톤 패턴: 인스턴스의 생성을 제한하여 하나의 인스턴스만 사용하는 디자인 패턴
+   - final: 상속할 수 없는 클래스
+
+   - 생성자는 클래스의 접근제어자와 같은 접근제어자를 가진다.
+   - 객체 생성을 막기 위해 private 접근제어자를 가진 생성자를 선언한다.
+   - 생성자의 접근제어자가 private이면 상속도 할 수 없게 된다.
+
+   - 싱글톤을 사용하는 이유
+      > 메모리 절약
+      > 속도 향상: 메모리에 한번 올라가면 계속 올라가져있기 때문에 빠른 참조 가능
+      > 객체 공유
+
+	<ex>
+	public final class Singleton { 
+		private static Singleton instance; // 인스턴스를 저장할 변수(싱글톤(클래스명)타입)
+
+		private Singleton(){ }
+		
+		public static Singleton getInstance(){ // 인스턴스를 반환하는 메서드
+			// 처음 호출된 때만 객체를 생성한다.
+			if(instance == null)
+				instance = new Singleton();
+			return instance;
+		}
+	}	
+
+
+
+
+
+=====================================================[0508]=====================================================
+
+< f_oop2 - f_oop2.ex_abstract - SampleAbstractParent.java >
+< f_oop2 - f_oop2.ex_abstract - Starcraft.java >
+
+ㅁ 추상클래스와 추상메서드
+   - abstract class 클래스명 {}
+   - abstrace 리턴타입 메서드명();
+   - 구현부가 없이 선언부만 존재하는 메서드를 추상메서드라고 한다.
+   - 추상메서드는 클래스 구현에 도움을 주기위해 사용한다.
+   - 추상메서드를 가진 클래스를 추상클래스라고 한다.
+
+
+
+< f_oop2 - f_oop2.ex_abstract - f_oop2.ex_abstract.ex_interface - SampleInterface.java >
+
+ㅁ 인터페이스
+   - interface 인터페이스명 {}
+   - 상수와 추상메서드만 멤버로 가질 수 있다.
+   - 모든 멤버변수의 제어자는 public static final 이며, 생략할 수 있다.
+   - 모든 메서드의 제어자는 public abstract 이며, 생략할 수 있다.
+
+   - 인터페이스의 모든 멤버변수는 public static final 제어자를 사용해야 한다.
+      ex) public static final int NUM1 = 1;
+   - 모든 멤버변수의 제어자가 같기 떄문에 생략이 가능하다.
+      ex) int NUM2 = 2;
+	
+   - 인터페이스의 모든 메서드는 public abstract 제어자를 사용해야한다.
+      ex) public abstract void method1();
+   - 모든 메서드의 제어자가 같기 떄문에 생략이 가능하다.
+      ex) void method2();
+
+   - 인터페이스를 상속받을 땐 implements를 사용한다.
+   - 다중 상속이 가능하다. -> 내용이 없는 추상메서드 이므로 다중 상속이 가능하다.
+      ex) class SampleImplement implements SampleInterface, SampleInterface2{ }
+
+   - 이 외에 JDK1.8부터 static 메서드와 디폴트 메서드를 사용할 수 있게 되었다.
+      > static, default는 구현부가 있는 메서드..(실무에선 1.7이 최고일것이다)
+
+
+
+< f_oop2 - InnerClass.java >
+
+ㅁ 내부클래스(inner class)
+   - 클래스 내부에서 선언된 클래스이다.
+   - 선언된 위치와 형태에 따라 여러가지로 나누어진다.
+   - 인스턴스 클래스: 멤버변수 선언위치에 선언하며, 인스턴스 멤버들과 관련된 작업에 사용된다.
+   - 스태틱 클래스: static이 붙고 멤버변수 선언위치에 선언하며, static 멤버들과 관련된 작업에 사용된다.
+   - 지역 클래스: 메서드나 초기화블럭 안에 선언하며, 선언된 영역 내부에서만 사용될 수 있다.
+   - 익명 클래스: 이름이 없고, 선언과 객체 생성을 동시에 한다.(일회용)
+
+
+
+< f_oop2 - AnonymousClass.java >
+
+ㅁ 익명클래스(anonymous class)
+   - 하나의 부모 클래스나 인터페이스를 상속받아 클래스를 선언함과 동시에 객체를 생성하는 클래스
+   - 주로 GUI(Grapic User Interface)를 만들 때 사용
+      > ex) 버튼
+
+
+
+
+
+=====================================================[0509]=====================================================
+
+< g_exception - ExceptionHandling.java >
+
+ㅁ 에러
+   - 컴파일 에러: 컴파일 시에 발생되는 에러(빨간줄)
+   - 논리적 에러: 실행은 되지만, 의도와 다르게 동작하는 것(버그)
+   - 런타임 에러: 실행 시에 발생되는 에러(우리가 처리할 에러)
+
+ㅁ 런타임 에러
+   - 런타임 에러 발생시 발생한 위치에서 프로그램이 비정상적으로 종료된다.
+   - 에러: 프로그램 코드에 의해서 수습될 수 없는 심각한 오류(처리불가)
+   - 예외: 프로그램 코드에 의해서 수습될 수 있는 다소 미약한 오류(처리가능)
+
+ㅁ 예외
+   - 모든 예외는 Exception 클래스의 자식 클래스이다.
+   - RuntimeException 클래스와 그 자식들은 예외처리가 강제되지 않는다.(unchecked 예외)
+   - [RuntimeException 클래스와 그 자식들을 제외한
+     Exception 클래스의 자식들은 예외처리가 강제된다.(checked 예외)
+
+ㅁ 예외처리(try-catch)
+   - 예외처리를 통해 프로그램이 비정상적으로 종료되는 것을 방지할 수 있다.
+   - try {} catch(Exception e) {}
+   - try 블럭 안의 내용을 실행 중 예외가 발생하면 catch로 넘어간다.
+   - catch의 ()안에는 처리할 예외를 지정해줄 수 있다.
+   - 여러 종류의 예외를 처리할 수 있도록 catch는 하나 이상 올 수 있다.
+   - 발생한 예외와 일치하는 catch 블럭안의 내용이 수행된 후 try-catch를 빠져나간다.
+   - 발생한 예외와 일치하는 catch가 없을 경우 예외는 처리되지 않는다.
+
+ㅁ 예외처리에 나오는 빨간글씨들은 콜스택이다(들어간 순서대로 아래로 출력)
+
+
+
+< g_exception - Finally.java >
+
+ㅁ finally
+   - 필요에 따라 try-catch 뒤에 finally를 추가할 수 있다.
+   - finally는 예외의 발생여부와 상관없이 가장 마지막에 수행된다.
+
+ㅁ 자동 자원 반환(try-with-resources)
+   - try(변수 선언; 변수 선언){} catch(Exception e){}
+   - 사용 후 반환이 필요한 객체를 try의 ()안에서 선언하면 try 블럭 종료시 자동으로 반환된다.
+
+
+
+< g_exception - ThrowException.java >
+
+ㅁ 예외 발생시키기
+   - throw new Exception();
+   - throw 키워드와 예외 클래스의 객체로 예외를 고의로 발생시킬 수 있다.
+
+
+
+< g_exception - ThrowsException.java >
+
+ㅁ 메서드에 예외 선언하기
+   - void method() throws Exception {}
+   - 메서드의 구현부 끝에 throws 키워드와 예외 클래스명으로 예외를 선언할 수 있다.
+   - 예외를 선언하면 예외처리를 하지 않고 자신을 호출한 메서드로 예외처리를 넘겨준다.
+
+
+
+
+
+=====================================================[0510]=====================================================
+
+< h_useful - ObjectClass.java > 
+
+ㅁ toString(): 객체에 대한 정보를 문자열로 제공한다.
+   - 출력값: 클래스명@해시코드(16진수)
+      ex) h_useful.ObjectClass@3654919e
+   - ALT + SHIFT + S > S > OK 하면 toString 오버라이딩 자동 생성
+
+
+
+< h_useful - StringSpeedTest.java > 
+
+ㅁ 문자열 생성 속도 비교
+   - StringBuffer sb = new StringBuffer("a");를 이용하는 것과 // 20만회에 0.016초
+   - str += "a";를 비교함 // 20만회에 7.5초
+
+
+
+< h_useful - StringClass.java >
+
+ㅁ 여러가지 String클래스의 생성자와 메서드
+
+
+
+< h_useful - MathClass.java >
+
+ㅁ Math클래스
+   - round(): 반올림
+   - ceil(): 올림
+   - floor(): 내림
+   - abs(): 절대값
+   - random(): double 난수 발생(0.0이상, 1.0미만)
+      ex) (int)(Math.random() * (Math.abs(to - from) + 1 )) + Math.min(from, to)
+
+
+
+< h_useful - WrapperClass.java >
+
+ㅁ Wrapper클래스: 기본형 타입을 객체로 사용해야 할 때 대신 사용하는 클래스
+   - boolean : Boolean
+   - char    : Character <<<
+   - byte    : Byte
+   - short   : Short
+   - int     : Integer   <<<
+   - long    : Long
+   - float   : Float
+   - double  : Double
+  
+   - Wrapper로 만들어진 참조형 타입과 기본형 타입은 자동 형변환이 된다.
+      ex) int i = 10;
+          Integer iw = new Integer(20);
+          System.out.println(i + iw); // 출력: 30
+
+   - 참조형으로 기본형의 최소값(MIN_VALUE)과 최대값(MAX_VALUE)을 알 수 있다.
+      ex) System.out.println(Integer.MIN_VALUE + " ~ " + Integer.MAX_VALUE); 
+          // 출력: -2147483648 ~ 2147483647
+
+   - 클래스에 타입을 바꿔주는 메서드가 있다.
+      ex) System.out.println(i + Integer.parseInt("20")); // "20"이 20(int형)이 된다.
+          // 출력: 30
+      ex) System.out.println(i + String.valueOf(20)); // 20이 "20"(String)이 된다.
+          // 출력: 1020
+      ex) System.out.println(i + Integer.valueOf("20")); // String.valueOf를 Integer.valueOf처럼 문장이 비슷하게 하기 위해 새로 생김
+          // 출력: 30
+
+   - 벡터클래스
+      ex) Vector<Integer> v = new Vector<Integer>();
+	  // 벡터클래스에 참조형과 기본형 둘 다 사용 가능하다.(오토박싱)
+	  v.add(new Integer(10)); // 참조형 타입
+	  v.add(10); // 기본형 타입 <- 오토박싱됨(오토박싱: 기본형타입이 wrapper클래스로 자동 변환)
+      ex2) // v.get(0): 벡터클래스에 0번째에 있는 값 가져오기
+	   Integer integer = v.get(0); // Integer형(참조형) 
+	   int i2 = v.get(0); // int형(기본형) <- 언박싱됨(언박싱: wrapper클래스가 기본형타입으로 자동 변환)
+	
+
+
+< h_useful - DateClass.java >
+
+ㅁ Date클래스
+   - 현재 날짜를 알려주는 클래스
+      ex) Date today = new Date(); // 현재 날짜
+          System.out.println(today); // 출력: Fri May 10 15:46:07 KST 2019
+
+   - 날짜 -> 포맷 -> 문자열
+      ex) SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");   // 소문자는 12시간 포맷
+          SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss.sss"); // 대문자는 24시간 포맷
+          SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+          SimpleDateFormat sdf4 = new SimpleDateFormat("yy-MM-dd hh:mm:ss a"); // yy는 뒤에서부터 2개 출력(19)
+        
+          System.out.println(sdf1.format(today)); // 출력: 2019-05-10
+          System.out.println(sdf2.format(today)); // 출력: 15:53:13.013
+          System.out.println(sdf3.format(today)); // 출력: 2019-05-10 15:53:13
+          System.out.println(sdf4.format(today)); // 출력: 19-05-10 03:53:13 오후
+
+   - 문자열 -> 포맷 -> 날짜
+      ex) String str = "2019년 5월 10일";
+          SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy년 MM월 dd일");
+          // Date dateStr = sdf5.parse(str); <- 컴파일 에러가 발생(예외처리 해야됨)
+
+          try {
+	  	Date dateStr = sdf5.parse(str);
+	  	} catch (ParseException e) {
+	  	e.printStackTrace();
+	  }
+	  System.out.println(sdf1.format(dateStr)); // 출력: 2019-05-10
+
+   - 날짜 지정하기
+      ex) Calendar cal = Calendar.getInstance(); // getInstance()는 싱글톤
+          // 날짜 셋팅
+          cal.setTime(new Date());
+          cal.set(2019, 4, 5); // 2019/05/05(월은 0부터 시작)
+          Date time = cal.getTime();
+          System.out.println(sdf3.format(time)); 
+          // 출력: 2019-05-05 16:06:39
+
+   - 날짜 계산하기
+      ex) // 날짜 계산
+          cal.add(Calendar.YEAR, 1); // year +1
+          cal.add(Calendar.MONTH, 2); // month +2
+          cal.add(Calendar.DAY_OF_MONTH,  -3); // day -3
+          System.out.println(sdf3.format(cal.getTime()));
+          // 출력: 2020-07-05 16:06:39
+	  cal.add(Calendar.HOUR, 2); // hour +2
+          cal.add(Calendar.MINUTE, 5); // minute +5
+          cal.add(Calendar.SECOND, -10); // second -10
+          System.out.println(sdf3.format(cal.getTime()));
+          // 출력: 2020-07-02 18:14:23
+
+
+
+< h_useful - RegularExpression.java >
+
+ㅁ 정규표현식(Regular Expression): 문자열의 패턴을 검사하는 표현식
+   - ^     뒷 문자로 시작
+   - $     앞 문자로 종료
+   - .     임의의 문자(줄바꿈 제외)
+   - *     앞 문자가 0개 이상
+   - +     앞 문자가 1개 이상
+   - ?     앞 문자가 없거나 1개
+   - []    문자의 집합이나 범위([a-z]: a부터 z까지, [^a-z]: a부터 z까지가 아닌 것)
+   - {}    앞 문자의 개수({2}: 2개, {2, 4}: 2개 이상 4개 이하)
+   - ()    그룹화(1개의 문자처럼 인식)
+   - |     OR 연산
+   - \s    공백, 탭, 줄바꿈
+   - \S    공백, 탭, 줄바꿈이 아닌 문자
+   - \w    알파벳이나 숫자
+   - \W    알파벳이나 숫자가 아닌 문자
+   - \d    숫자
+   - \d    숫자가 아닌 문자
+   - (?i)  뒷 문자의 대소문자 구분 안함
+   - \     정규표현식에서 사용되는 특수문자 표현
+
+   - https://regexr.com
+
+
+
+
+
+=====================================================[0513]=====================================================
+
+< i_collection - CollectionsFramework.java >
+
+ㅁ CollectionsFramework
+   - Collections: 다수의 데이터
+   - Framework: 표준화된 프로그래밍 방식
+
+ㅁ List // 인터페이스
+   // 인터페이스를 구현해서 생성한 클래스들
+   - Vector        : ArrayList의 구버전 
+
+   - [★]ArrayList : 저장순서 유지, 중복 허용
+   - LinkedList    : 데이터 추가 및 삭제시간 단축
+      > ArrayList는 읽는게 빠름, LinkedList는 추가삭제가 빠름
+      > 인덱스와 저장순서는 같음
+
+   - Stack         : LIFO(Last In First Out)
+   - Queue         : FIFO(First In First Out)
+
+ㅁ Set // 인터페이스
+   // 인터페이스를 구현해서 생성한 클래스들
+   - HashSet       : 중복 허용 안함, 저장순서 유지 안함
+   - TreeSet       : HashSet에서 정렬, 검색 기능 향상
+
+ㅁ Map // 인터페이스
+   // 인터페이스를 구현해서 생성한 클래스들
+   - HashTable     : HashMap의 구버전
+   - [★]HashMap   : 키(key)와 값(value)을 한쌍으로 저장
+   - TreeMap       : 정렬, 검색 기능 향상
+
+   [★]Array와 [★]HashMap 위주로 학습할 것.
+
+
+
+< i_collection - ArrayListClass.java >
+
+ㅁ ArrayList의 주요 메서드(교재 585p)
+   - add()    : 마지막 위치에 객체를 추가
+   - get()    : 지정된 위치의 객체를 반환
+   - set()    : 지정된 위치에 주어진 객체를 저장(수정)
+   - size()   : 저장된 객체의 수 반환
+   - remove() : 저장된 위치의 객체를 제거
+
+
+
+< i_collection - HashMapClass.java >
+
+ㅁ HashMap의 주요 메서드(교재 645p)
+   - put()    : 지정된 키와 값을 저장
+      > put(key, value)
+   - remove() : 저장된 키로 저장된 값을 제거
+      > remove(key)
+   - get()    : 지정된 키의 값을 반환(없으면 null)
+      > get(key)
+   - keySet() : 저장된 모든 키를 Set으로 반환
+      > 모든 key를 Set형태로 반환(출력할 때)
+
+ㅁ map에 저장된 모든 내용 출력
+   - Set<String> set = map.keySet();
+     Iterator<String> itr = set.iterator(); // 컬렉션의 표준화된 출력방법
+     while(itr.hasNext()){
+     	String key = itr.next(); // 값을 가져오기
+     	String value = map.get(key); // key를 이용해 value를 가져오기
+	System.out.println(key + ": " + value); 
+     }
+
+ㅁ 게시판 만들기
+   - ArrayList<HashMap<String, Object>> table = new ArrayList<HashMap<String, Object>>();
+	
+     HashMap<String, Object> row = new HashMap<String, Object>();
+		
+     row.put("no", 1);
+     row.put("title", "제목");
+     row.put("user", "김승섭");
+     row.put("date", "2019-05-13");
+
+     table.add(row);
+
+
+
+
+
+=====================================================[0521]=====================================================
+
+우리가 흔히 접할 수 있는 웹사이트를 모델로 
+
+순수한 자바를 이용하여 콘솔로 제작
+
+ex) 호텔예약, 배달의민족, 반관리(도시락), 코레일, 영화예매 등..
+
+ex) 배달의 민족이라면
+	- 회원가입 -> 로그인 -> 일반사용자 -> 음식의 분류 -> 음식점목록 -> 음식메뉴 -> 결제 -> 리뷰
+		+ 세부내용 정의
+
+	- 회원가입 -> 로그인 -> 관리자 -> 음식분류 등록/수정/삭제 -> 음식점목록 등록/수정/삭제..
+	- 공지사항, FAQ 등..
+
+	- 위 내용을 설계한 뒤 테이블을 설계
+
+	- 유저테이블: 아이디, 비밀번호, 이름, 휴대폰번호, 이메일 ..... + 중복되지않는 값이 필요(키값, 여기선 ID)
+	- 공지사항테이블: 제목, 내용, 작성자, 작성일, 댓글(작성자/내용/작성일) + 글번호(기본키)
+							- 댓글은 다른 테이블로 분리할 것!!
+	- 테이블은 세분화
+
+- 인터페이스를 사용하는 이유:
+	협업하는 경우 인터페이스를 이용하여 전체를 설계한다.
+
+
+
+
+
+=================================================================================================================
+
+[ CGV ]
+
+- 영화별 예매 
+  극장별 예매 (선호하는 극장)
+
+- 예매 (극장 / 시간 / 자리) -> 좌석지정
+
+- 별점+후기
+
+- 결제
+
+- 포인트
+
+- 생일 
+
+- 내가본영화
+
+- 등급(VIP)
+
+- 영화: 1. 정보(영화이름/감독/장르/나이/개봉일/시간/줄거리/) 
+	2. 시간표
+	3. 평점/리뷰
+	4. 특별관 여부
+	
+- 이벤트
+
+- 공지사항
+
+- 고객센터
+
+- 스토어
+
+
+
+
+< Admin의 기능 >
+
+* Movie	- create 
+		> search(단일)
+	- modify
+		> search(단일)
+		> list(전체)
+	- delete
+		> search(단일)
+		> list(전체)
+	- 검색에 필요한 데이터: Movie 테이블
+
+* Theater - create
+		> search(단일)
+		> Screen create
+	- modify
+		> search(단일)
+		> list(전체)
+		> Screen modify
+	- delete
+		> search(단일)
+		> list(전체)	
+
+
+* Screen - create
+		> search(단일)
+			* Seat - create
+				- modify
+				- delete
+	- modify
+		> search(단일)
+			* Seat - create
+				- modify
+				- delete
+		> list(전체)
+.			* Seat - create
+				- modify
+				- delete
+	- delete -> seat도 같이 삭제
+		> search(단일)
+		> list(전체)	
+
+
+
+
+* Manager - create
+		> search(단일)
+	- modify
+		> search(단일)
+			> id를 통해
+			> 극장을 통해
+		> list(전체)
+	- delete
+		> search(단일)
+			> id를 통해
+			> 극장을 통해
+		> list(전체)
+
+
+
+< Manager의 기능 > 
+
+* Screen: Admin의 Screen과 같은 기능
+
+* Show: - 시간설정
+	- 상영관 배정
+
+< User의 기능 >
+
+* 예매
+	> 극장별 시간표 확인
+	  영화별 시간표 확인
+		> 좌석선택
+		> 매수
+			> 결제
+				> 총가격 2
+				> 포인트 
+				> 카드 
+		
+
+* 예매내역확인
+
+* 관람한 영화내역
+
+	> 리뷰기능
+
+* 극장별 시간표 확인
+
+* 로그인 / 로그아웃
+
+* 개인정보 확인
+	> 포인트 확인
+	> 등급혜택 확인
+	> 비밀번호 및 개인정보 변경
+	> favoriteMovie 변경 
+
+< Guest의 기능 >
+
+* 회원가입
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
